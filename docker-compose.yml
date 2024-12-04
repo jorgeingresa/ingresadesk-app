@@ -1,0 +1,14 @@
+version: '3.9'
+
+services:
+  app:
+    build:
+      context: .
+    ports:
+      - "3000:3000"
+    volumes:
+      - .:/app:delegated  # Sincroniza los cambios del host al contenedor
+      - /app/node_modules  # Excluye la carpeta node_modules del host
+    command: npm start  # Usa el script de nodemon
+    environment:
+      - CHOKIDAR_USEPOLLING=true  # Garantiza la recarga en algunos entornos como Docker en Windows/Mac
