@@ -1,5 +1,5 @@
 # Usa la imagen base de Node.js
-FROM node:14.18.1-buster
+FROM node:22
 
 # Configura el directorio de trabajo
 WORKDIR /home/node/app

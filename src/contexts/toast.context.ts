@@ -21,7 +21,7 @@ export const useToastContext = () => {
 
   const snackbarProps = useMemo(() => ({
     open,
-    onClose(event: SyntheticEvent | MouseEvent, reason?: string) {
+    onClose(event: Event | SyntheticEvent<any, Event>, reason?: string) {
       if (reason === 'clickaway') {
         return;
       }
